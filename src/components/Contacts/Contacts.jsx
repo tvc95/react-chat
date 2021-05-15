@@ -3,7 +3,7 @@ import { ListGroup } from 'react-bootstrap';
 import { useContacts } from '../../contexts/Contacts/ContactsProvider.js';
 
 const Contacts = () => {
-  const { contacts } = useContacts;
+  const { contacts } = useContacts();
   return (
     <ListGroup variant="flush">
       {contacts.map(contact => (

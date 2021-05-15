@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Form, Modal, Button } from 'react-bootstrap';
 import { useContacts } from '../../contexts/Contacts/ContactsProvider.js';
 import { useConversations } from '../../contexts/Conversations/ConversationsProvider.js';
+import { NewConvModalDiv } from './styles.js';
 
 const NewConversationModal = ({ closeModal }) => {
   const [selectedContactIds, setSelectedContactIds] = useState([]);
@@ -26,9 +27,9 @@ const NewConversationModal = ({ closeModal }) => {
   };
 
   return (
-    <>
+    <NewConvModalDiv>
       <Modal.Header closeButton>
-        <h1>Create Contact</h1>
+        <h1>Create Conversation</h1>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
@@ -42,11 +43,10 @@ const NewConversationModal = ({ closeModal }) => {
               />
             </Form.Group>
           ))}
+          <Button type="submit">Create</Button>
         </Form>
-
-        <Button type="submit">Create</Button>
       </Modal.Body>
-    </>
+    </NewConvModalDiv>
   );
 };
 
