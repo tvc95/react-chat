@@ -2,18 +2,16 @@
 import React, { useCallback, useState } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import { useConversations } from '../../contexts/Conversations/ConversationsProvider.js';
-import { MessageInputControl } from './styles.js';
+// import { MessageInputControl } from './styles.js';
 
 const OpenConversation = () => {
   const [text, setText] = useState('');
-
-  const { sendMessage, selectedConversation } = useConversations();
-
   const setRef = useCallback(node => {
     if (node) {
       node.scrollIntoView({ smooth: true });
     }
   }, []);
+  const { sendMessage, selectedConversation } = useConversations();
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -67,7 +65,7 @@ const OpenConversation = () => {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="m-2">
           <InputGroup>
-            <MessageInputControl
+            <Form.Control
               as="textarea"
               required
               value={text}

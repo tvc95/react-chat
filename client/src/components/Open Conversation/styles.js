@@ -3,6 +3,6 @@ import { Form } from 'react-bootstrap';
 import styled from 'styled-components';
 
 export const MessageInputControl = styled(Form.Control)`
-  height: 75px;
-  resize: none;
+  height: 75px !important;
+  resize: none !important;
 `;

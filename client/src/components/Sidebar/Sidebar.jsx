@@ -6,7 +6,7 @@ import Contacts from '../Contacts/Contacts.jsx';
 import Conversations from '../ConversationComp/Conversations.jsx';
 import NewConversationModal from '../New Conversation Modal/NewConversationModal.jsx';
 import NewContactModal from '../New Contact Modal/NewContactModal.jsx';
-import { SideBarContainer, SideBarFooter } from './styles.js';
+import { SideBarContainer, SideBarFooter, NavComponent } from './styles.js';
 
 const CONVERSATIONS_KEY = 'conversations';
 const CONTACTS_KEY = 'contacts';
@@ -24,7 +24,7 @@ const Sidebar = ({ id }) => {
   return (
     <SideBarContainer className="d-flex flex-column">
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
-        <Nav variant="tabs" className="justify-content-center">
+        <NavComponent fill variant="tabs">
           <Nav.Item>
             <Nav.Link eventKey={CONVERSATIONS_KEY}>Conversations</Nav.Link>
           </Nav.Item>
@@ -32,7 +32,7 @@ const Sidebar = ({ id }) => {
           <Nav.Item>
             <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
           </Nav.Item>
-        </Nav>
+        </NavComponent>
 
         <Tab.Content className="flex-grow-1 border-end overflow-auto">
           <Tab.Pane eventKey={CONVERSATIONS_KEY}>
