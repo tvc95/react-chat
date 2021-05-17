@@ -1,0 +1,7 @@
+{
+  "name": "server-chat",
+  "version": "1.0.0",
+  "description": "Websocket server for whatsapp clone",
+  "main": "index.js",
+  "license": "MIT"
+}
